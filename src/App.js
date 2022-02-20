@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+import React,{ Component } from 'react';
+import Header from './components/Hearder';
 import './App.css';
+class App extends Component {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    state = {
+      titre:"Mon titre"
+    }
+    // changeTilte = (e) => {
+    //     this.setState({
+    //       titre:"New Title"
+    //     })
+    // }
+    // changeViaParam = (param) => {
+    //   this.setState({
+    //     titre : param
+    //   })
+    // }
+    // changeViaBind = (param) => {
+    //   this.setState({
+    //     titre : param
+    //   })
+    // }
+    // changeViaInput = (e) => {
+    //   // console.log(e.target.value)
+    //   this.setState({
+    //     titre : e.target.value
+    //   })
+
+    // }
+
+    render(){
+      return (
+        <div className="App">
+          <Header titre = {this.state.titre} />
+          {/* <button onClick={this.changeTilte}>Changer le nom en dur</button> */}
+          {/* <button onClick={() => {this.changeViaParam("Titre vie Param")}}>Changer via Param</button> */}
+          {/* <button onClick={this.changeViaBind.bind(this,"Titre vie Bind")}>Changer via Bind</button> */}
+          {/* <input type="text" onChange={this.changeViaInput}/> */}
+        </div>
+      );
+    }
 }
 
 export default App;
